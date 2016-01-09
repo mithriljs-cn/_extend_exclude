@@ -1,0 +1,34 @@
+{
+  "name": "_extend_exclude",
+  "version": "1.0.0",
+  "description": "Javascript object _extend()/_exclude() for deeply merge/exclude",
+  "main": "src/_extend_exclude.js",
+  "scripts": {
+    "travis-before_install": "npm install -g grunt-cli",
+    "travis-test": "grunt jshint && npm test",
+    "make": "browserify src/_extend_exclude.js -s _extend_exclude | uglifyjs -c -m -o dist/_extend_exclude.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithriljs-cn/_extend_exclude.git"
+  },
+  "keywords": [
+    "object extend",
+    "extend",
+    "deep merge"
+  ],
+  "author": "mithriljs_cn",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "mocha": "^2.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mithriljs-cn/_extend_exclude/issues"
+  },
+  "homepage": "https://github.com/mithriljs-cn/_extend_exclude#readme"
+}
