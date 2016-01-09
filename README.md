@@ -1,4 +1,4 @@
-# _extend_exclude 
+# _extend_exclude  [![Build Status](https://travis-ci.org/mithriljs-cn/_extend_exclude.svg?branch=master)](https://travis-ci.org/mithriljs-cn/_extend_exclude)
 
 Javascript object _extend()/_exclude() for deeply merge/exclude
 
