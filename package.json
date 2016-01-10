@@ -1,6 +1,6 @@
 {
   "name": "util_extend_exclude",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Javascript object _extend()/_exclude() for deeply operate two object",
   "main": "src/util_extend_exclude.js",
   "scripts": {
