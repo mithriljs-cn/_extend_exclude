@@ -1,78 +1,78 @@
-# _extend_exclude  [![Build Status](https://travis-ci.org/mithriljs-cn/_extend_exclude.svg?branch=master)](https://travis-ci.org/mithriljs-cn/_extend_exclude)
+# util_extend_exclude  [![Build Status](https://travis-ci.org/mithriljs-cn/util_extend_exclude.svg?branch=master)](https://travis-ci.org/mithriljs-cn/util_extend_exclude)
 
-Javascript object _extend()/_exclude() for deeply merge/exclude
+**js object _extend()/_exclude() for deeply merge/exclude**
 
 ### Usage:
 
-think below data:
-
 ````
+var _extend = require('util_extend_exclude')._extend
+var _exclude = require('util_extend_exclude')._exclude
 var a = {
-  name:"James",
-  age:22,
-  prop:{
-		addr:"ABC",
-		sn:1001,
-		order:['apple', 'pear']
+  x:1,
+  y:{
+    z:2
   }
 }
 
 var b= {
-	age:10,
-	prop:{
-		addr:1,
-		newAddr:"xyz"
-	}
+  y:{
+    z:10,
+    u:'name'
+  }
+}
+_extend(a,b)
+_exclude(a,b)
+````
+
+### _extend( a, b )
+
+**Deeply merge b properties into a**
+
+*_extend( a, b )*
+````
+{
+  x:1,
+  y:{
+    z:10,
+    u:'name'
+  }
 }
 ````
 
-Then with:
+### _exclude( a, exclude_obj, [newValue] )
+
+**Deeply delete exclude_obj(if key has a truthy value) from a, optionally set to newValue if present**
+
+*_exclude( a, { y:{z:1} } )*
+
 ````
-console.log( _extend(a,b) )
-==>
 {
-  "name": "James",
-  "age": 10,
-  "prop": {
-    "addr": 1,
-    "sn": 1001,
-    "order": [
-      "apple",
-      "pear"
-    ],
-    "newAddr": "xyz"
+  x:1,
+  y:{
+    u:'name'
+  }
+}
+````
+*_exclude( a, { y:{z:10} } , null)*
+````
+{
+  x:1,
+  y:{
+    z:null,
+    u:'name'
   }
 }
 
-console.log( _exclude(a,b) )
-==>
-{
-  "name": "James",
-  "prop": {
-    "sn": 1001,
-    "order": [
-      "apple",
-      "pear"
-    ]
-  }
-}
+````
 
-console.log( _exclude(a,b, null) )
-==>
-{
-  "name": "James",
-  "age": null,
-  "prop": {
-    "addr": null,
-    "sn": 1001,
-    "order": [
-      "apple",
-      "pear"
-    ],
-    "newAddr": null
-  }
-}
+### _deepIt( a, b, callback )
 
+**Iterate deeply with a && b simultaneously, and callback(objA, objB, key)**
+````
+_deepIt( a, b, function(objA,objB,key){
+    objA[key] = objB[key]
+} )
+---> same result of _extend(a,b)
 ````
 
 ### Copyright @ Mithriljs_CN

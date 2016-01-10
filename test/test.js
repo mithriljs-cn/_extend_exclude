@@ -1,6 +1,6 @@
 var assert = require('assert')
 var expect = require('chai').expect
-var lib = require('../src/_extend_exclude')
+var lib = require('../src/util_extend_exclude')
 
 var a = {
   name:"James",
@@ -53,8 +53,8 @@ describe('Test a/b with lib', function  () {
 
 	it('@ _exclude with newVal', function(){
 		var val = lib._exclude(a, excludeList, null)
-		expect( val ).be.deep.equal( 
-			{"name":"James","age":null,"prop":{"addr":null,"sn":1001,"order":["apple","pear"],"newAddr":"xyz"}} 
+		expect( val ).be.deep.equal(
+			{"name":"James","age":null,"prop":{"addr":null,"sn":1001,"order":["apple","pear"],"newAddr":"xyz"}}
 		)
 	})
 
