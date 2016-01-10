@@ -1,6 +1,6 @@
 # util_extend_exclude  [![Build Status](https://travis-ci.org/mithriljs-cn/util_extend_exclude.svg?branch=master)](https://travis-ci.org/mithriljs-cn/util_extend_exclude)
 
-**js object _extend()/_exclude() for deeply merge/exclude**
+**js object _extend()/_exclude() for deeply operate two object**
 
 ### Usage:
 
